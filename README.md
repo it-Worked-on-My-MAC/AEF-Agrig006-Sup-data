@@ -1,10 +1,10 @@
+# AEF-Agrig006-Sup-data
 # Fungal Phylogenomics Pipeline
+
 
 This document serves as supplementary material for the final report and provides a detailed description of the computational methods used.
 
 ## Pipeline Overview
-
-The analysis is broken down into a series of numbered bash scripts (`bin/`), which orchestrate the entire workflow. Each script performs a specific, well-defined task, allowing for easy troubleshooting and modular execution.
 
 The pipeline covers the following major steps:
 
@@ -91,17 +91,3 @@ This pipeline relies on several bioinformatics tools, all of which are managed v
 * seaborn
 * scipy
 
-## How to Re-run the Analysis
-
-1.  **Clone this repository** to your local machine.
-2.  **Install Conda** and the necessary environments. The `bin/` directory contains several `*_env_setup.sh` scripts that can create these environments for you, or you can create them manually from the provided `environments/*.yml` files.
-3.  **Place your raw reads** in the `data/reads/` directory. The scripts expect files to be named `[sample_id]_1.fq.gz` and `[sample_id]_2.fq.gz`.
-4.  **Edit `bin/00_config.sh`** to match your file paths, sample IDs, and other parameters.
-5.  **Run the scripts in numerical order** from the `bin/` directory.
-
-```bash
-# Example
-cd your_project_name/
-bash bin/01_trimming_and_fastqc.sh
-bash bin/02_assembly_spades.sh
-...
